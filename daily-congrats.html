@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="ltr">
+	<head>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-YP39ZSDWMC"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-YP39ZSDWMC');
+		</script>
+
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="congratulations.css">
+		<title>Alice in Wordland — Daily Challenge</title>
+		<!-- confetti library for the celebration animation -->
+		<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.1.2/dist/confetti.browser.min.js"></script>
+	</head>
+	<body class="body">
+		<!-- big green header to celebrate -->
+		<h1 class="title">Daily Challenge Complete!</h1>
+		<p class="subtitle" id="streak-message">Loading...</p>
+
+		<!-- shows the player's stats from the puzzle they just finished -->
+		<div class="stats-container">
+			<div class="stat-box">
+				<div class="stat-label">TIME</div>
+				<div class="stat-value" id="final-time">00:00:00</div>
+			</div>
+			<div class="stat-box">
+				<div class="stat-label">STREAK</div>
+				<div class="stat-value" id="final-streak">0</div>
+			</div>
+			<div class="stat-box daily-streak-box">
+				<div class="stat-label">DAY STREAK</div>
+				<div class="stat-value" id="daily-streak">0</div>
+			</div>
+		</div>
+
+		<!-- Second Alice Image from: https://www.pinterest.com/pin/buy-2-get-1-free-digital-clipart-alice-in-wonderland-cartoon-characters-fantastic-party-friends-funny-pictures-for-scrapbook--292663675769952326/ -->
+		<image class = "alice-image" src = "alice5.png" alt = "alice"></image>
+
+		<!-- only a home button — no "play same level" for daily challenge -->
+		<div class="button-row">
+			<button class="btn home-btn" onclick="goHome()">Home</button>
+		</div>
+	</body>
+	<script src="daily-congrats.js"></script>
+</html>

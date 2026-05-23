@@ -17,8 +17,20 @@ function dailyChallenge(){
     location.replace('gamepage.html');
 }
 
+// returns today's date as YYYY-MM-DD
+function getTodayString() {
+    return new Date().toISOString().split('T')[0];
+}
+
 // runs when the home page loads — sets up the level buttons
 window.onload = function() {
+    // disable daily challenge button if already completed today
+    var dailyBtn = document.querySelector('.daily-btn');
+    var lastDaily = localStorage.getItem('dailyChallengeCompleted');
+    if (lastDaily === getTodayString()) {
+        dailyBtn.disabled = true;
+        dailyBtn.textContent = 'Challenge Done!';
+    }
     var btnContainer = document.getElementById("myDIV");
     var btns = btnContainer.getElementsByClassName("but");
 

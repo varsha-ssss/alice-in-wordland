@@ -7,6 +7,9 @@
 // the puzzle the player is currently solving (loaded from puzzles.js)
 let currentPuzzle = null;
 
+// whether this is a daily challenge
+let isDailyMode = false;
+
 // how many letters each word has — depends on which level they picked
 let wordLength = 4;
 
@@ -83,6 +86,7 @@ window.onload = function () {
 
     // check if this is a daily challenge
     let isDaily = localStorage.getItem('dailyChallenge') === 'true';
+    isDailyMode = isDaily;
     localStorage.removeItem('dailyChallenge');
 
     // figure out which level they picked on the home page (defaults to 2)
@@ -304,12 +308,40 @@ function checkIfComplete() {
     localStorage.setItem('lastTime', getTimeString());
     localStorage.setItem('lastStreak', currentStreak);
     localStorage.setItem('lastBestStreak', bestStreak);
+
+    // if daily challenge, mark it as completed for today and update the day streak
+    if (isDailyMode) {
+        let today = new Date().toISOString().split('T')[0];
+        localStorage.setItem('dailyChallengeCompleted', today);
+
+        // calculate the daily streak — consecutive days of completing the challenge
+        let lastDate = localStorage.getItem('dailyStreakLastDate') || '';
+        let streak = parseInt(localStorage.getItem('dailyStreak') || '0');
+
+        // check if yesterday was the last completion (consecutive day)
+        let yesterday = new Date();
+        yesterday.setDate(yesterday.getDate() - 1);
+        let yesterdayStr = yesterday.toISOString().split('T')[0];
+
+        if (lastDate === yesterdayStr) {
+            streak++;
+        } else if (lastDate !== today) {
+            streak = 1;
+        }
+
+        localStorage.setItem('dailyStreak', streak);
+        localStorage.setItem('dailyStreakLastDate', today);
+    }
 }
 
 
 // sends the player to the congratulations page
 function goToCongratulations() {
-    location.replace('congratulations.html');
+    if (isDailyMode) {
+        location.replace('daily-congrats.html');
+    } else {
+        location.replace('congratulations.html');
+    }
 }
 
 // sends the player back to the home page
