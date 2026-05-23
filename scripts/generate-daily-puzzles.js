@@ -216,35 +216,14 @@ var DAILY_CHALLENGE = \`${puzzleText}\`;
 }
 
 async function main() {
-  console.log("Generating daily puzzles...\n");
+  console.log("Generating daily challenge (Level 3)...\n");
 
-  let allSuccess = true;
-
-  // Generate puzzles for all 3 levels and append to puzzles.js
-  for (const level of [1, 2, 3]) {
-    const puzzle = await generatePuzzle(level);
-    if (puzzle) {
-      const appended = appendPuzzleToPuzzlesJs(puzzle, level);
-      if (!appended) allSuccess = false;
-    } else {
-      allSuccess = false;
-    }
-    console.log("");
-  }
-
-  // Generate a single Level 3 daily challenge
-  console.log("Generating daily challenge (Level 3)...");
   const dailyPuzzle = await generatePuzzle(3);
   if (dailyPuzzle) {
     writeDailyChallenge(dailyPuzzle);
+    console.log("\nDaily challenge generated successfully!");
   } else {
-    allSuccess = false;
-  }
-
-  if (allSuccess) {
-    console.log("\nAll daily puzzles generated and added successfully!");
-  } else {
-    console.error("\nSome puzzles failed to generate. Check logs above.");
+    console.error("\nFailed to generate daily challenge. Check logs above.");
     process.exit(1);
   }
 }
