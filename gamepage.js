@@ -81,12 +81,21 @@ window.onload = function () {
     startBtn.onclick = startTimer;
     stopBtn.onclick = stopTimer;
 
+    // check if this is a daily challenge
+    let isDaily = localStorage.getItem('dailyChallenge') === 'true';
+    localStorage.removeItem('dailyChallenge');
+
     // figure out which level they picked on the home page (defaults to 2)
     let level = localStorage.getItem('selectedLevel') || '2';
     let puzzleText;
 
+    if (isDaily && typeof DAILY_CHALLENGE !== 'undefined' && DAILY_CHALLENGE) {
+        // daily challenge mode — use the pre-generated Level 3 puzzle
+        puzzleText = DAILY_CHALLENGE;
+        wordLength = 5;
+    }
     // level 1 = easy (3-letter words), level 2 = medium (4-letter), level 3 = hard (5-letter)
-    if (level == '1') {
+    else if (level == '1') {
         puzzleText = PUZZLES_LEVEL1;
         wordLength = 3;
     }
@@ -102,22 +111,28 @@ window.onload = function () {
     // turn the text into actual puzzle objects
     let allPuzzles = parsePuzzles(puzzleText);
 
-    // pick a random puzzle, but don't repeat the one they just played
-    let lastPlayed = parseInt(localStorage.getItem('lastPuzzlePlayed') || '-1');
-    let puzzleIndex;
-    if (allPuzzles.length === 1) {
-        puzzleIndex = 0;
-    } 
-    else {
-        do {
-            puzzleIndex = Math.floor(Math.random() * allPuzzles.length);
-        } while (puzzleIndex === lastPlayed);
+    if (isDaily && allPuzzles.length > 0) {
+        // daily challenge always uses the first (and only) puzzle
+        currentPuzzle = allPuzzles[0];
     }
+    else {
+        // pick a random puzzle, but don't repeat the one they just played
+        let lastPlayed = parseInt(localStorage.getItem('lastPuzzlePlayed') || '-1');
+        let puzzleIndex;
+        if (allPuzzles.length === 1) {
+            puzzleIndex = 0;
+        }
+        else {
+            do {
+                puzzleIndex = Math.floor(Math.random() * allPuzzles.length);
+            } while (puzzleIndex === lastPlayed);
+        }
 
-    // remember which one we picked so we don't repeat it next time
-    localStorage.setItem('lastPuzzlePlayed', puzzleIndex);
+        // remember which one we picked so we don't repeat it next time
+        localStorage.setItem('lastPuzzlePlayed', puzzleIndex);
 
-    currentPuzzle = allPuzzles[puzzleIndex];
+        currentPuzzle = allPuzzles[puzzleIndex];
+    }
 
     // update the input boxes to match the word length for this level
     for (let i = 1; i <= 7; i++) {

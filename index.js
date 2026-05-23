@@ -10,6 +10,13 @@ function instructionsPage(){
     location.replace('instructions.html');
 }
 
+// starts the daily challenge — sets level to 3 and flags it as daily mode
+function dailyChallenge(){
+    localStorage.setItem('selectedLevel', '3');
+    localStorage.setItem('dailyChallenge', 'true');
+    location.replace('gamepage.html');
+}
+
 // runs when the home page loads — sets up the level buttons
 window.onload = function() {
     var btnContainer = document.getElementById("myDIV");
