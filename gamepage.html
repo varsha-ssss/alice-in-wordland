@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="gamepage.css">
+		<title>Alice in Wordland</title>
+	</head>
+	<body class="body">
+
+		<!-- timer at the top — shows hours, minutes, seconds, and centiseconds -->
+		<div class="timer-container">
+			<div id="time">
+				<span class="digit" id="hr">00</span>
+				<span class="txt">Hr</span>
+				<span class="digit" id="min">00</span>
+				<span class="txt">Min</span>
+				<span class="digit" id="sec">00</span>
+				<span class="txt">Sec</span>
+				<span class="digit" id="count">00</span>
+			</div>
+			<!-- pause and start buttons for the timer -->
+			<div id="buttons">
+				<button class="btn" id="stop">Pause</button>
+				<button class="btn" id="start">Start</button>
+			</div>
+		</div>
+
+		<!-- yellow box on the left — shows the current word and the clue to solve -->
+		<div class="info-box">
+			<div class="info-start-word" id="clue-current-word">----</div>
+			<div class="info-divider"></div>
+			<div class="info-clue-text" id="clue-text">Loading clue...</div>
+		</div>
+
+		<!-- the ladder and the 7 input boxes — each box sits on a rung -->
+		<div class="game-area">
+		<!-- Ladder Image from: https://www.freepik.com/free-photos-vectors/rope-ladder-design?scrlybrkr=3d8adf19 -->
+			<image class="ladder-image" src="ladder.png" alt="ladder">
+			<input type="text" id="step1" maxlength="4" placeholder="Answer">
+			<input type="text" id="step2" maxlength="4" placeholder="Answer">
+			<input type="text" id="step3" maxlength="4" placeholder="Answer">
+			<input type="text" id="step4" maxlength="4" placeholder="Answer">
+			<input type="text" id="step5" maxlength="4" placeholder="Answer">
+			<input type="text" id="step6" maxlength="4" placeholder="Answer">
+			<input type="text" id="step7" maxlength="4" placeholder="Answer">
+		</div>
+
+		<!-- banner area for showing messages (not currently used but available) -->
+		<div id="result-banner" class="result-banner"></div>
+
+		<!-- "next" button — only appears after you finish the puzzle -->
+		<div class="action-buttons">
+			<button class="btn" id="next-btn" onclick="goToCongratulations()" style="display:none;">Next</button>
+		</div>
+
+		<!-- streak tracker on the right side -->
+		<!-- current = how many first-try correct answers in a row right now -->
+		<div class="streak-box">
+			<div class="streak-label">CURRENT</div>
+			<div class="streak-value" id="current-streak">0</div>
+		</div>
+
+		<!-- best = the highest streak you've ever had (saved across sessions) -->
+		<div class="streak-box best-streak-box">
+			<div class="streak-label">BEST</div>
+			<div class="streak-value" id="best-streak">0</div>
+		</div>
+
+		<!-- puzzles.js has to load first so the puzzle data is available -->
+		<script src="puzzles.js"></script>
+		<script src="gamepage.js"></script>
+	</body>
+</html>

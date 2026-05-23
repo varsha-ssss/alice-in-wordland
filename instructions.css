@@ -1,0 +1,131 @@
+/* gray background to match the rest of the site */
+.body {
+	background-color: rgb(211, 211, 211);
+	margin: 20px;
+	padding: 0px;
+	font-family: "Franklin Gothic Medium";
+}
+
+/* centers everything on the page */
+.mainContainer {
+	width: 1000px;
+	margin: 0 auto;
+	padding: 0px;
+}
+
+/* big "Instructions" header */
+.title {
+	text-align: center;
+	font-size: 60px;
+	color: black;
+	margin-bottom: 10px;
+}
+
+/* smaller "Alice in Wordland" under the title */
+.subtitle {
+	text-align: center;
+	font-size: 35px;
+	color: black;
+	margin-bottom: 50px;
+	font-weight: normal;
+}
+
+/* grid layout for the 4 instruction panels — single column, centered */
+.panels-container {
+	display: grid;
+	place-content: center;
+	grid-template-columns: 80%;
+	gap: 25px;
+	margin-bottom: 50px;
+}
+
+/* each blue instruction panel */
+.panel {
+	background-color: rgb(152, 191, 238);
+	border-radius: 15px;
+	border: 3px dotted black;
+	padding: 25px;
+	position: relative;
+}
+
+/* slight zoom on hover for the panels */
+/* https://www.w3schools.com/css/css3_animations.asp */
+.panel:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* the green circle with the step number (1, 2, 3, 4) */
+.panel-number {
+	position: absolute;
+	top: -15px;
+	left: 20px;
+	background-color: rgb(120, 180, 110);
+	color: white;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 24px;
+	font-weight: bold;
+	border: 1px solid black;
+}
+
+/* bold title inside each panel */
+.panel-title {
+	font-size: 24px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	color: rgb(50, 50, 50);
+}
+
+/* the explanation text inside each panel */
+.panel-text {
+	font-size: 16px;
+	color: rgb(40, 40, 40);
+}
+
+/* green "home page" button at the bottom */
+.play-button {
+	display: block;
+	margin: 0 auto;
+	background-color: rgb(120, 180, 110);
+	color: white;
+	border: 2px solid black;
+	border-radius: 15px;
+	padding: 20px 60px;
+	font-size: 28px;
+	font-weight: bold;
+	cursor: pointer;
+	font-family: "Franklin Gothic Medium";
+}
+
+/* hover zoom for the button */
+/* https://www.w3schools.com/css/css3_animations.asp */
+.play-button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* alice images positioned around the page for decoration */
+.aliceone-image {
+	position: absolute;
+	left: -2%;
+	z-index = 0;
+}
+
+.alicetwo-image {
+	position: absolute;
+	left: 78%;
+	top: 62%;
+	z-index = 0;
+}
+
+.alicethree-image {
+	position: absolute;
+	left: -2%;
+	top: 110%;
+	z-index = 0;
+}

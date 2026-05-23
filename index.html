@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="ltr">
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="index.css">
+		<title>Alice in Wordland</title>
+		<link href="https://fonts.googleapis.com" rel="stylesheet">
+	</head>
+
+	<body class = "body">
+		<div class = "mainContainer">
+			<h1 class = "h1">Alice in Wordland</h1>
+			<!-- Alice Image from: https://www.etsy.com/listing/1729104252/alice-in-wonderland-svg-cut-file-falling?dd_referrer=https%3A%2F%2Fwww.google.com%2F -->
+			<image class = "alice-image" src = "alice.png" alt = "alice">
+			<!-- Grass Image from: https://stock.adobe.com/search?k=grass+cartoon -->
+			<image class = "grass-image" src = "grass.png" alt = "grass" width = "380">
+
+			<!-- main navigation buttons -->
+			<button class = "btn" type="button" name="Instructions" onclick="instructionsPage()">Instructions</button>
+			<!-- play button starts disabled — gets enabled when a level is picked -->
+			<button class = "button" type="button" name="Play!" onclick="nextPage()" disabled>Play!</button>
+
+			<!-- level picker — 1 is easy, 2 is medium, 3 is hard -->
+			<label for = "level" class = "label">Choose your level:</label>
+			<div id="myDIV">
+				<button class="but">1</button>
+				<button class="but">2</button>
+				<button class="but">3</button>
+			</div>
+		</div>
+
+		<script src="index.js"></script>
+	</body>
+</html>

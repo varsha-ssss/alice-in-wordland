@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="ltr">
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="instructions.css">
+		<title>Alice in Wordland Instructions</title>
+	</head>
+
+	<body class="body">
+		<div class="mainContainer">
+			<!-- page header -->
+			<h1 class="title">Instructions</h1>
+			<h2 class="subtitle">Alice in Wordland</h2>
+
+			<!-- decorative alice images around the page -->
+			<!-- Images from https://www.disneyclips.com/images/alice3.html -->
+			<image class = "aliceone-image" src = "alice1.png" alt = "alice1" width = "380">
+			<image class = "alicetwo-image" src = "alice2.png" alt = "alice2" width = "320">
+			<image class = "alicethree-image" src = "alice3.png" alt = "alice3" width = "380">
+
+			<!-- four instruction panels explaining how to play -->
+			<div class="panels-container">
+				<!-- panel 1: what the game is about -->
+				<div class="panel">
+					<div class="panel-number">1</div>
+					<h3 class="panel-title">Game Objective</h3>
+					<p class="panel-text">
+						Use the clues to transform the starting word
+						step-by-step until you reach the final word.
+						Each correct answer helps Alice climb higher up
+						the ladder. Get her to the top and escape the
+						Queen of Hearts!
+					</p>
+				</div>
+
+				<!-- panel 2: the actual rules and how guessing works -->
+				<div class="panel">
+					<div class="panel-number">2</div>
+					<h3 class="panel-title">How to Play</h3>
+					<p class="panel-text">
+						<ul>
+						  <li>You'll start with a base word and a clue.</li>
+						  <li>Use the clue to change the base word into a new word.</li>
+						  <li>Each correct transformation moves you up one step!</li>
+						</ul>
+						<strong>Example:</strong><br>
+						Base Word: <strong>PINT</strong><br>
+						Clue: A Valentine's Day color <br>
+						Answer: <strong>PINK</strong><br><br>
+
+						In Level 1, you will change one letter of a three letter word. In Level 2, you will change one letter of a four letter word. 
+						In Level 3, you will change two letters of a five letter word.
+					</p>
+				</div>
+
+				<!-- panel 3: how the timer and pause/start work -->
+				<div class="panel">
+					<div class="panel-number">3</div>
+					<h3 class="panel-title">Timer & Controls</h3>
+					<p class="panel-text">
+						<ul>
+						  <li>The timer starts automatically when the game begins.</li>
+						  <li>Press <strong>Pause</strong> anytime to stop the game (this disables typing).</li>
+						  <li>Press <strong>Start</strong> to continue.</li>
+						</ul>
+					</p>
+				</div>
+
+				<!-- panel 4: how streaks and the congrats page work -->
+				<div class="panel">
+					<div class="panel-number">4</div>
+					<h3 class="panel-title">Track Your Progress</h3>
+					<p class="panel-text">
+						Watch the streak tracker at the top left increase
+						as you play the game as you answer correctly on the first try.
+						The tracker shows both your current streak as well as your
+						best. After you reach the final word, you win and Alice escapes!
+						The timer stops automatically, and you can then reach the
+						Congratulations page, where your best streak and final
+						time will be displayed.
+					</p>
+				</div>
+			</div>
+
+			<!-- button to go back to the home page -->
+			<button class="play-button" type="button" onclick="nextPage()">
+				Home Page
+			</button>
+		</div>
+
+		<script src="instructions.js"></script>
+	</body>
+</html>

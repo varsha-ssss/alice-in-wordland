@@ -1,0 +1,127 @@
+/* gray background for the whole page */
+.body {
+	background-color: rgb(211, 211, 211);
+}
+
+/* game title — big and bold, positioned to the right of alice */
+.h1 {
+  position: absolute;
+  font-size: 70px;
+  top: 8%;
+  left: 46%;
+  font-family: "Franklin Gothic Medium";
+}
+
+/* alice image on the left side of the screen */
+.alice-image {
+	position: absolute;
+	width: 37%;
+	top: 0.9%;
+	z-index = 1;
+}
+
+/* grass along the bottom of the page */
+.grass-image{
+	position: absolute;
+	width: 99.75%;
+	height: 40%;
+	top: 60%;
+	z-index = 6;
+}
+
+/* the big "play!" button */
+.button {
+	position: absolute;
+	width: 250px;
+	height: 83px;
+	font-size: 37px;
+	border-radius: 20px;
+	font-family: "Franklin Gothic Medium";
+	left: 68%;
+	top: 51%;
+	z-index = 3;
+}
+
+/* the "instructions" button */
+.btn{
+	position: absolute;
+	width: 250px;
+	height: 83px;
+	font-size: 37px;
+	border-radius: 20px;
+	font-family: "Franklin Gothic Medium";
+	left: 56%;
+	top: 33%;
+	z-index = 2;
+}
+
+/* hover effect — slight zoom and shadow */
+/* https://www.w3schools.com/css/css3_animations.asp */
+.button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+/* same hover for the instructions button */
+/* https://www.w3schools.com/css/css3_animations.asp */
+.btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+/* dropdown styling (not currently used but kept for reference) */
+.dropdown{
+	position: absolute;
+	font-size: 28px;
+	font-family: "Franklin Gothic Medium";
+	left: 49%;
+	top: 56%;
+	z-index = 4;
+}
+
+/* https://www.w3schools.com/css/css3_animations.asp */
+.dropdown:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+/* container for the 1, 2, 3 level buttons */
+/* https://www.w3schools.com/howto/howto_js_active_element.asp */
+#myDIV {
+    position: absolute;
+    font-size: 28px;
+    font-family: "Franklin Gothic Medium";
+    left: 49%;
+    top: 56%;
+    z-index: 4;
+}
+
+/* individual level buttons */
+.but {
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+/* dark background when a level is selected or hovered */
+.active, .but:hover {
+    background-color: #666;
+    color: white;
+}
+
+/* "choose your level" label */
+.label{
+	position: absolute;
+	width: 250px;
+	height: 75px;
+	font-size: 33px;
+	font-family: "Franklin Gothic Medium";
+	left: 45%;
+	top: 49%;
+	z-index = 5;
+}

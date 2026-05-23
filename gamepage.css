@@ -1,0 +1,200 @@
+/* gray background — same as the rest of the site */
+.body {
+	background-color: rgb(211, 211, 211);
+}
+
+/* --- timer section at the top --- */
+.timer-container {
+	position: absolute;
+	top: 27px;
+	left: 50%;
+	width: 50%;
+}
+
+/* the big white numbers */
+.digit {
+	font-size: 50px;
+	color: rgb(250, 250, 250);
+}
+
+/* the small yellow labels (Hr, Min, Sec) */
+.txt {
+	font-size: 30px;
+	color: rgb(253, 248, 182);
+}
+
+#buttons {
+	margin-top: 50px;
+}
+
+/* green start button */
+#start {
+	position: absolute;
+	width: 100px;
+	padding: 10px 15px;
+	top: 10px;
+	left: 540px;
+	background-color: rgb(120, 224, 159);
+}
+
+/* red pause button */
+#stop {
+	position: absolute;
+	width: 100px;
+	padding: 10px 15px;
+	top: 10px;
+	left: 420px;
+	background-color: rgb(255, 126, 126);
+}
+
+/* --- yellow info box (left side) — shows the word and clue --- */
+.info-box {
+	position: absolute;
+	top: 25%;
+	left: 3%;
+	width: 300px;
+	background-color: rgb(255, 255, 200);
+	border: 2.5px solid rgb(0, 0, 0);
+	padding: 24px 26px;
+}
+
+/* the big word at the top of the info box */
+.info-start-word {
+	font-size: 38px;
+	font-weight: bold;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	margin-bottom: 18px;
+}
+
+/* thin gray line between the word and the clue */
+.info-divider {
+	height: 1px;
+	background-color: rgb(170, 170, 170);
+	margin-bottom: 14px;
+}
+
+/* the clue text below the divider */
+.info-clue-text {
+	font-size: 18px;
+	line-height: 1.6;
+}
+
+/* --- ladder area — the ladder image and inputs are positioned inside this container --- */
+.game-area {
+	position: absolute;
+	top: 12%;
+	left: 37%;
+	width: 380px;
+	height: 82%;
+}
+
+/* ladder stretches to fill the container */
+.ladder-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* shared styles for all 7 input boxes — centered on the ladder */
+.game-area input {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 20px;
+	text-align: center;
+	width: 120px;
+	padding: 4px;
+	border: 2px solid rgb(150, 150, 150);
+	border-radius: 4px;
+}
+
+/* each input sits on its rung — step1 is the bottom, step7 is the top */
+#step1 { top: 86.5%; }
+#step2 { top: 73%; }
+#step3 { top: 60%; }
+#step4 { top: 47%; }
+#step5 { top: 34.5%; }
+#step6 { top: 21%; }
+#step7 { top: 8%; }
+
+/* green background when the answer is correct */
+input.correct {
+	background-color: rgb(200, 247, 197);
+	color: rgb(26, 107, 26);
+	font-weight: 700;
+}
+
+/* red background when the answer is wrong */
+input.wrong {
+	background-color: rgb(255, 213, 213);
+}
+
+/* keep correct answers visible even though the input is disabled */
+input:disabled {
+	opacity: 1;
+	cursor: default;
+}
+
+/* --- result banner (not currently used but ready if needed) --- */
+.result-banner {
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 12px;
+}
+
+.result-banner.success {
+	color: rgb(26, 107, 26);
+}
+
+/* --- "next" button at the bottom center --- */
+.action-buttons {
+	position: fixed;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	gap: 12px;
+}
+
+.btn {
+	padding: 10px 18px;
+	font-size: 15px;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+/* --- yellow streak boxes on the right side --- */
+.streak-box {
+	position: absolute;
+	top: 25%;
+	left: 70%;
+	width: 300px;
+	background-color: rgb(255, 255, 200);
+	border: 2.5px solid rgb(0, 0, 0);
+	padding: 24px 26px;
+	text-align: center;
+}
+
+/* best streak box goes right below the current one */
+.best-streak-box {
+	top: 43%;
+}
+
+/* "CURRENT" / "BEST" label */
+.streak-label {
+	font-size: 20px;
+	font-weight: bold;
+	letter-spacing: 3px;
+	margin-bottom: 8px;
+}
+
+/* the big number under the label */
+.streak-value {
+	font-size: 38px;
+	font-weight: bold;
+}
