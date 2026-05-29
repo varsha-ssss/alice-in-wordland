@@ -38,7 +38,7 @@
 	border-radius: 20px;
 	font-family: "Franklin Gothic Medium";
 	left: 68%;
-	top: 60%;
+	top: 53%;
 	z-index = 3;
 }
 
@@ -95,7 +95,7 @@
     font-size: 28px;
     font-family: "Franklin Gothic Medium";
     left: 49%;
-    top: 62%;
+    top: 55%;
     z-index: 4;
 }
 
@@ -123,7 +123,7 @@
 	border-radius: 20px;
 	font-family: "Franklin Gothic Medium";
 	left: 56%;
-	top: 42%;
+	top: 70%;
 	z-index: 7;
 	background-color: #e8a020;
 	color: white;
@@ -151,6 +151,6 @@
 	font-size: 33px;
 	font-family: "Franklin Gothic Medium";
 	left: 45%;
-	top: 55%;
+	top: 48%;
 	z-index = 5;
 }
