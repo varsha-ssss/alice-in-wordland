@@ -84,10 +84,9 @@ window.onload = function () {
     startBtn.onclick = startTimer;
     stopBtn.onclick = stopTimer;
 
-    // check if this is a daily challenge
+    // check if this is a daily challenge (flag stays until puzzle is completed)
     let isDaily = localStorage.getItem('dailyChallenge') === 'true';
     isDailyMode = isDaily;
-    localStorage.removeItem('dailyChallenge');
 
     // figure out which level they picked on the home page (defaults to 2)
     let level = localStorage.getItem('selectedLevel') || '2';
@@ -311,6 +310,7 @@ function checkIfComplete() {
 
     // if daily challenge, mark it as completed for today and update the day streak
     if (isDailyMode) {
+        localStorage.removeItem('dailyChallenge');
         let today = new Date().toISOString().split('T')[0];
         localStorage.setItem('dailyChallengeCompleted', today);
 
